@@ -11,7 +11,7 @@ class Product extends BaseModel
      */
     public function all()
     {
-        $sql = "SELECT * FROM products";
+        $sql = "SELECT p.*, cate_name FROM products p JOIN categories c ON p.category_id=c.id";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);

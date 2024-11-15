@@ -11,5 +11,13 @@ function view($path_view, $data = [])
 
     $path_view = str_replace(".", "/", $path_view);
 
-    include_once "views/$path_view.php";
+    include_once ROOT_DIR . "views/$path_view.php";
+}
+
+//Hàm dd dùng để debug
+function dd($data)
+{
+    echo "<pre>";
+    var_dump($data);
+    echo "</pre>";
 }
