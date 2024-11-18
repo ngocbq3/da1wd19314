@@ -75,4 +75,16 @@ class AdminProductController
         header("location: " . ADMIN_URL . "?ctl=editsp&id=" . $data['id']);
         die;
     }
+
+    //Xóa sản phẩm
+    public function delete()
+    {
+        $id = $_GET['id'];
+        (new Product)->delete($id);
+
+        $_SESSION['message'] = "Xóa dữ liệu thành công";
+        //chuyển trang về list
+        header("location: " . ADMIN_URL . "?ctl=listsp");
+        die;
+    }
 }
