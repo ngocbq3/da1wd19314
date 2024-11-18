@@ -6,7 +6,12 @@ class AdminProductController
     public function index()
     {
         $products = (new Product)->all();
-        return view('admin.products.list', compact('products'));
+
+        //Lấy thông báo từ session
+        $message = $_SESSION['message'] ?? '';
+        //Hủy session
+        unset($_SESSION['message']);
+        return view('admin.products.list', compact('products', 'message'));
     }
 
     //Hàm hiển thị form thêm
