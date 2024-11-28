@@ -19,4 +19,24 @@ class ProductController
             compact('products', 'categories', 'title')
         );
     }
+
+    //Chi tiết sản phẩm
+    public function show()
+    {
+        $id = $_GET['id'];
+
+        $product = (new Product)->find($id);
+
+        $categories = (new Category)->all();
+
+        $title = $product['name'] ?? '';
+
+        //Lưu thông tin URI
+        $_SESSION['URI'] = $_SERVER['REQUEST_URI'];
+
+        return view(
+            'clients.products.detail',
+            compact('product', 'categories', 'title')
+        );
+    }
 }

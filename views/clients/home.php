@@ -9,7 +9,7 @@
                 <div class="product-box">
                     <img src="<?= $pet['image'] ?>" alt="Product Image" class="product-img">
                     <div class="product-info">
-                        <a href="#">
+                        <a href="<?= ROOT_URL . '?ctl=detail&id=' . $pet['id'] ?>">
                             <h5 class="product-name"><?= $pet['name'] ?></h5>
                         </a>
                         <div>
@@ -34,7 +34,7 @@
                 <div class="product-box">
                     <img src="<?= $pro['image'] ?>" alt="Product Image" class="product-img">
                     <div class="product-info">
-                        <a href="#">
+                        <a href="<?= ROOT_URL . '?ctl=detail&id=' . $pro['id'] ?>">
                             <h5 class="product-name"><?= $pro['name'] ?></h5>
                         </a>
                         <div>
